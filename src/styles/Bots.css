@@ -1,0 +1,45 @@
+.bots {
+  display: grid;
+  gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1280px;
+  margin: 32px 0 24px;
+  justify-content: center;
+}
+
+.bots__button {
+  min-width: 100px;
+  min-height: 220px;
+  border: 0;
+  padding: 10px;
+  background-color: #1b293f;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.bots__button:hover {
+  box-shadow: inset 0 0 20px 20px #1a3450;
+}
+
+.bots__sign {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 6px 0;
+  margin: 0;
+}
+
+.bots__sign_action {
+  color: #fff;
+}
+.bots__sign_add {
+  color: #4c5f77;
+}
+
+.bots__sign_negative {
+  color: #f4417d;
+}
+
+.bots__sign_positive {
+  color: #59a252;
+}

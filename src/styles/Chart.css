@@ -1,0 +1,10 @@
+.chart {
+  width: 100%;
+  height: 400px;
+  padding-top: 32px;
+}
+
+.chart__tooltip-label {
+  color: #59a252;
+  font-size: 2rem;
+}
