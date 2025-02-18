@@ -9,3 +9,5 @@ npm install
 
 npm run dev
 ```
+
+[Link to GitHub Pages](https://yegorsid.github.io/bots/)
