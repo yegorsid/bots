@@ -1,5 +1,3 @@
-import '../styles/Controls.css'
-
 function Controls() {
   return (
     <div className='controls'>

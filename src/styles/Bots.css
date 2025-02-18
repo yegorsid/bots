@@ -3,18 +3,18 @@
   gap: 3px;
   grid-template-columns: repeat(3, 1fr);
   max-width: 1280px;
-  margin: 32px 0 24px;
+  padding: 0 24px 32px;
   justify-content: center;
 }
 
 .bots__button {
   min-width: 100px;
-  min-height: 220px;
+  min-height: 200px;
   border: 0;
   padding: 10px;
   background-color: #1b293f;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .bots__button:hover {
@@ -23,10 +23,11 @@
 
 .bots__sign {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 24px;
   line-height: 1;
-  padding: 6px 0;
+  padding: 4px 0 0;
   margin: 0;
+  font-weight: 700;
 }
 
 .bots__sign_action {
@@ -42,4 +43,48 @@
 
 .bots__sign_positive {
   color: #59a252;
+}
+
+@media screen and (max-width: 900px) {
+  .bots__sign {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .bots {
+    padding-bottom: 24px;
+  }
+
+  .bots__sign {
+    font-size: 16px;
+  }
+
+  .bots__button {
+    min-width: 100px;
+    min-height: 120px;
+  }
+
+  .bots__image {
+    width: 70%
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bots {
+    padding-bottom: 16px;
+  }
+
+  .bots__sign {
+    font-size: 14px;
+  }
+
+  .bots__button {
+    min-width: 80px;
+    min-height: 100px;
+  }
+
+  .bots__image {
+    width: 60%
+  }
 }

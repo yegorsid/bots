@@ -1,5 +1,5 @@
-import '../styles/Chart.css'
-import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, TooltipProps, XAxis } from "recharts";
+import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 const data = [
   {
@@ -46,11 +46,11 @@ const data = [
   }
 ]
 
-const CustomTooltip = ({ active, payload }) => {
+const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
     return (
       <div>
-        <p className="chart__tooltip-label">{`${payload[0].value}%`}</p>
+        <p className="chart__tooltip-label">{`+${payload[0].value}%`}</p>
       </div>
     );
   }

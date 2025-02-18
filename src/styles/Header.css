@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding-bottom: 24px;
+  padding: 32px 24px 32px;
 }
 
 .header__menu-button {
@@ -22,7 +22,7 @@
 
 .header__text {
   color: #4c5f77;
-  font-size: 3rem;
+  font-size: 48px;
   margin: 0;
 }
 
@@ -37,4 +37,33 @@
   background-position: center;
   cursor: pointer;
   padding: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .header__text {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .header {
+    padding: 16px 24px;
+  } 
+
+  .header__text {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .header__menu-button {
+    width: 24px;
+    height: 24px;
+    background-size: 20px 10px;
+  }
+
+  .header__refresh {
+    width: 24px;
+    height: 24px;
+    background-size: 18px 18px;
+  }
 }

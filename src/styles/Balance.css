@@ -1,12 +1,13 @@
 .balance {
   display: flex;
   justify-content: space-between;
-  gap: 20px
+  gap: 20px;
+  padding: 0 24px 32px;
 }
 
 .balance__title {
   color: #4c5f77;
-  font-size: 2rem;
+  font-size: 32px;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@
 
 .balance__btc {
   color: #fff;
-  font-size: 4rem;
+  font-size: 64px;
   padding: 0;
   margin: 0;
   line-height: 1.2;
@@ -29,6 +30,7 @@
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  gap: 2px
 }
 
 .balance__icon {
@@ -39,4 +41,59 @@
 
 .balance__number {
   color: #ffffff
+}
+
+@media screen and (max-width: 900px) {
+  .balance__title {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .balance__title {
+    font-size: 20px;
+  }
+
+  .balance__btc {
+    font-size: 28px;
+  }
+
+  .balance__icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .balance {
+    padding-bottom: 16px;
+  }
+
+  .balance__title {
+    font-size: 14px;
+  }
+
+  .balance__btc {
+    font-size: 18px;
+  }
+
+  .balance__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .balance__title {
+    font-size: 12px;
+  }
+
+  .balance__btc {
+    font-size: 16px;
+  }
+
+  .balance__icon {
+    width: 14px;
+    height: 14px;
+  }
 }

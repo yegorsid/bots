@@ -1,4 +1,3 @@
-import '../styles/Balance.css'
 import coin from '../assets/coin.png'
 
 function Balance() {
