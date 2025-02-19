@@ -76,7 +76,7 @@ const useStore = create<State>() (
     },
     {
       name: 'bot-storage',
-      storage: createJSONStorage(() => sessionStorage),
+      storage: createJSONStorage(() => localStorage),
     }
   )
 )
