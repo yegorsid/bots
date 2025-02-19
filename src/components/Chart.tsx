@@ -1,50 +1,6 @@
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, TooltipProps, XAxis } from "recharts";
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
-
-const data = [
-  {
-    "name": "Page A",
-    "uv": 4000,
-    "pv": 2400,
-    "amt": 2400
-  },
-  {
-    "name": "Page B",
-    "uv": 3000,
-    "pv": 1398,
-    "amt": 2210
-  },
-  {
-    "name": "Page C",
-    "uv": 2000,
-    "pv": 9800,
-    "amt": 2290
-  },
-  {
-    "name": "Page D",
-    "uv": 2780,
-    "pv": 3908,
-    "amt": 2000
-  },
-  {
-    "name": "Page E",
-    "uv": 1890,
-    "pv": 4800,
-    "amt": 2181
-  },
-  {
-    "name": "Page F",
-    "uv": 2390,
-    "pv": 3800,
-    "amt": 2500
-  },
-  {
-    "name": "Page G",
-    "uv": 3490,
-    "pv": 4300,
-    "amt": 2100
-  }
-]
+import { State, useShallowStore } from "../store/store";
 
 const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) => {
   if (active && payload && payload.length) {
@@ -58,13 +14,19 @@ const CustomTooltip = ({ active, payload }: TooltipProps<ValueType, NameType>) =
   return null;
 };
 
+const selector = (state: State) => ({
+  chartData: state.chartData
+});
+
 function Chart() {
+  const { chartData } = useShallowStore(selector);
+
   return (
     <div className="chart">
       <ResponsiveContainer width="100%" >
-        <AreaChart data={data}>
+        <AreaChart data={chartData}>
           <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <linearGradient id="areaColor" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#0076d1" stopOpacity={0.8}/>
               <stop offset="95%" stopColor="#0076d1" stopOpacity={0}/>
             </linearGradient>
@@ -72,7 +34,7 @@ function Chart() {
           <CartesianGrid strokeDasharray="4 4" strokeOpacity={0.3} />
           <XAxis dataKey="name" axisLine={false} />
           <Tooltip content={<CustomTooltip />} />
-          <Area type="monotone" dataKey="uv" stroke="#0076d1" fill="url(#colorUv)" fillOpacity={1} strokeWidth={2}/>
+          <Area type="monotone" dataKey="value" stroke="#0076d1" fill="url(#areaColor)" fillOpacity={1} strokeWidth={2}/>
         </AreaChart>
       </ResponsiveContainer>
     </div>
