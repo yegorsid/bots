@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { useShallow } from 'zustand/react/shallow';
-import { defaultChartData } from '../utils/defaultChartData';
 import { getRandomNumber } from '../utils/getRandomNumber';
 
 export enum TimeRange {
@@ -61,7 +60,7 @@ const useStore = create<State>() (
       const state: State = {
         selectedBot: undefined,
         selectedTimeRange: TimeRange.SevenDays,
-        chartData: defaultChartData,
+        chartData: generateBotData(TimeRange.SevenDays),
         setTimeRange: (selectedTimeRange: TimeRange) => {
           const chartData = generateBotData(selectedTimeRange);
           set({selectedTimeRange, chartData})
