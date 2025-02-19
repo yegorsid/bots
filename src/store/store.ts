@@ -27,8 +27,8 @@ const generateBotData = (timeRange: TimeRange) => {
   const chartData: ChartChunkType[] = [];
   if (timeRange !== TimeRange.Day) {
     const iterations = timeRange === TimeRange.SevenDays ? 7 : 30;
-    for (let i = 0; i <= iterations; i++) {
-      const date = new Date(Date.now() - (iterations * 24 * 3600 * 1000) + (i * 24 * 3600 * 1000));
+    for (let i = iterations; i >= 0; i--) {
+      const date = new Date(Date.now() - i * 24 * 3600 * 1000);
       const day = date.getDate().toString().padStart(2, '0');
       const month = (date.getMonth() + 1).toString().padStart(2, '0');
       const data = {
@@ -39,8 +39,8 @@ const generateBotData = (timeRange: TimeRange) => {
       chartData.push(data)
     }
   } else {
-    for (let i = 0; i <= 24; i++) {
-      const date = new Date(Date.now() - (24 * 3600 * 1000) + (i * 3600 * 1000));
+    for (let i = 24; i >= 0; i--) {
+      const date = new Date(Date.now() - i * 3600 * 1000);
       const hour = date.getHours().toString().padStart(2, '0');
       const data = {
         "name": `${hour}:00`,
