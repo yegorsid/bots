@@ -1,6 +1,6 @@
 # Bots 
 
-React app made with pure CSS and Recharts
+React app made with pure CSS, Recharts and Zustand
 
 To run locally:
 
